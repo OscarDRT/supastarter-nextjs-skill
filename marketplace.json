@@ -3,8 +3,8 @@
   "displayName": "supastarter Next.js",
   "description": "Expert guidance for supastarter Next.js SaaS development. Includes coding conventions, architecture patterns, and ready-to-use code examples.",
   "version": "1.0.0",
-  "author": "Oscar Riano Tapias",
-  "repository": "https://github.com/OscarDRT/supastarter-skill",
+  "author": "Oscar Rodriguez",
+  "repository": "https://github.com/OscarDRT/supastarter-nextjs-skill",
   "license": "MIT",
   "skills": [
     {

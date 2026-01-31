@@ -21,17 +21,17 @@ This Agent Skill provides comprehensive guidance for building production-ready S
 
 ```bash
 # Install from GitHub
-npx skills add OscarDRT/supastarter-skill
+npx skills add OscarDRT/supastarter-nextjs-skill
 
 # Or with full URL
-npx skills add https://github.com/OscarDRT/supastarter-skill
+npx skills add https://github.com/OscarDRT/supastarter-nextjs-skill
 ```
 
 ### Using Claude Code
 
 ```bash
 # In Claude Code CLI
-/plugin install supastarter-nextjs@OscarDRT-supastarter-skill
+/plugin install supastarter-nextjs@OscarDRT-supastarter-nextjs-skill
 ```
 
 ### Manual Installation
@@ -125,7 +125,7 @@ Works with any Agent Skills-compatible tool:
 
 ```bash
 # 1. Install the skill
-npx skills add OscarDRT/supastarter-skill
+npx skills add OscarDRT/supastarter-nextjs-skill
 
 # 2. Start your AI assistant
 # Claude Code, Cursor, etc.
