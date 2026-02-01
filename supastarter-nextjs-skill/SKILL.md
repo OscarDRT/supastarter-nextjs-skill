@@ -1,11 +1,11 @@
 ---
 name: supastarter-nextjs-skill
-description: Guides development with supastarter for Next.js only (not Vue/Nuxt): tech stack, setup, configuration, database (Prisma), API (Hono/oRPC), auth (Better Auth), organizations, payments (Stripe), AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E. Use when building or modifying supastarter Next.js apps, adding features, or when the user mentions supastarter Next.js, Prisma, oRPC, Better Auth, or related Next.js stack topics.
+description: "Guides development with supastarter for Next.js only (not Vue/Nuxt): tech stack, setup, configuration, database (Prisma), API (Hono/oRPC), auth (Better Auth), organizations, payments (Stripe), AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E. Use when building or modifying supastarter Next.js apps, adding features, or when the user mentions supastarter Next.js, Prisma, oRPC, Better Auth, or related Next.js stack topics."
 license: See LICENSE
 metadata:
   author: supastarter
   version: "1.0"
-compatibility: Designed for Cursor (or similar agents). Run scripts from supastarter monorepo root.
+  compatibility: "Designed for Cursor (or similar agents). Run scripts from supastarter monorepo root."
 ---
 
 # supastarter for Next.js – Skill

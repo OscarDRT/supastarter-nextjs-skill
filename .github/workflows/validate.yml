@@ -9,60 +9,33 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Check SKILL.md exists
-      run: |
-        if [ ! -f "supastarter-nextjs/SKILL.md" ]; then
-          echo "Error: SKILL.md not found"
-          exit 1
-        fi
-        echo "✓ SKILL.md found"
-    
-    - name: Validate YAML frontmatter
-      run: |
-        # Check if frontmatter exists
-        if ! head -1 supastarter-nextjs/SKILL.md | grep -q "^---$"; then
-          echo "Error: Missing YAML frontmatter"
-          exit 1
-        fi
-        echo "✓ YAML frontmatter present"
-    
-    - name: Check required fields
-      run: |
-        # Extract frontmatter
-        content=$(sed -n '/^---$/,/^---$/p' supastarter-nextjs/SKILL.md)
-        
-        # Check for name
-        if ! echo "$content" | grep -q "^name:"; then
-          echo "Error: Missing 'name' field in frontmatter"
-          exit 1
-        fi
-        
-        # Check for description
-        if ! echo "$content" | grep -q "^description:"; then
-          echo "Error: Missing 'description' field in frontmatter"
-          exit 1
-        fi
-        
-        echo "✓ Required fields present"
-    
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install PyYAML
+      run: pip install pyyaml
+
+    - name: Validate skill (quick_validate)
+      run: python .github/scripts/quick_validate.py supastarter-nextjs-skill
+
     - name: Check file structure
       run: |
-        if [ -d "supastarter-nextjs/references" ]; then
+        if [ -d "supastarter-nextjs-skill/references" ]; then
           echo "✓ References directory exists"
         fi
-        
-        if [ -d "supastarter-nextjs/scripts" ]; then
+        if [ -d "supastarter-nextjs-skill/scripts" ]; then
           echo "✓ Scripts directory exists"
         fi
-        
-        if [ -d "supastarter-nextjs/assets" ]; then
+        if [ -d "supastarter-nextjs-skill/assets" ]; then
           echo "✓ Assets directory exists"
         fi
-    
+
     - name: Validate README
       run: |
         if [ ! -f "README.md" ]; then
@@ -70,7 +43,7 @@ jobs:
           exit 1
         fi
         echo "✓ README.md found"
-    
+
     - name: Validate LICENSE
       run: |
         if [ ! -f "LICENSE" ]; then
@@ -78,7 +51,7 @@ jobs:
           exit 1
         fi
         echo "✓ LICENSE found"
-    
+
     - name: Summary
       run: |
         echo "========================================="
