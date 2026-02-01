@@ -8,17 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2026-01-31
 
 ### Added
-- **supastarter-nextjs-skill** – New Agent Skills–compliant skill (name matches folder per spec)
-- 20+ reference docs: tech-stack, setup, configuration, troubleshooting, database-patterns, api-patterns, auth-patterns, organization-patterns, payments-patterns, ai-patterns, customization, storage-patterns, mailing-patterns, internationalization, seo, deployment, background-tasks, analytics, monitoring, e2e-testing
+- **supastarter-nextjs-skill** – New Agent Skills–compliant skill (name matches folder per [spec](https://agentskills.io/specification))
+- **references/** – 23 docs: coding-conventions, code-patterns, quick-reference, tech-stack, setup, configuration, troubleshooting, database-patterns, api-patterns, auth-patterns, organization-patterns, payments-patterns, ai-patterns, customization, storage-patterns, mailing-patterns, internationalization, seo, deployment, background-tasks, analytics, monitoring, e2e-testing
 - Coding conventions, code patterns, and quick reference (migrated from previous skill)
-- **scripts/generate_module.py** – Scaffold new oRPC API modules
-- **assets/env.example** – Environment variables template
-- **assets/recipes/feedback-widget.md** – Full recipe (DB → API → UI → i18n)
-- README and marketplace.json updated for new skill; Cursor install paths documented
+- **scripts/generate_module.py** – Scaffold new oRPC API modules; usage in `scripts/README.md`
+- **assets/env.example** – Environment variables template (no secrets)
+- **assets/recipes/feedback-widget.md** – Full recipe: DB schema → queries → API (oRPC) → UI → i18n → integration
+- README and marketplace.json updated for new skill; Cursor install paths (`~/.cursor/skills/supastarter-nextjs-skill/`) documented
 
 ### Changed
 - Skill folder renamed from `supastarter-nextjs/` to `supastarter-nextjs-skill/`
-- marketplace.json `skills[0]` now points to `./supastarter-nextjs-skill`
+- marketplace.json: `name`, `path`, and `description` now reference `./supastarter-nextjs-skill`
 
 ### Removed
 - **supastarter-nextjs/** – Replaced by supastarter-nextjs-skill
