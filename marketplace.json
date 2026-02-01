@@ -2,8 +2,8 @@
   "name": "supastarter-nextjs-skill",
   "displayName": "supastarter Next.js Skill",
   "description": "Agent Skills–compliant skill for supastarter Next.js: tech stack, setup, configuration, database (Prisma), API (Hono/oRPC), auth (Better Auth), organizations, payments (Stripe), AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E. Includes coding conventions, 20+ reference docs, code patterns, quick reference, and feedback-widget recipe.",
-  "version": "1.0.0",
-  "author": "Oscar Rodriguez",
+  "version": "1.1.0",
+  "author": "Oscar Riano Tapias",
   "repository": "https://github.com/OscarDRT/supastarter-nextjs-skill",
   "license": "MIT",
   "skills": [
