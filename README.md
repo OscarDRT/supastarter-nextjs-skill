@@ -1,23 +1,25 @@
 # supastarter Next.js Skill
 
-> Expert guidance for working with the [supastarter](https://supastarter.dev) Next.js SaaS starter kit.
+> Agent Skills–compliant skill for [supastarter](https://supastarter.dev) **Next.js only** (no Vue/Nuxt). Expert guidance for the full stack: tech stack, setup, database (Prisma), API (Hono/oRPC), auth (Better Auth), organizations, payments (Stripe), AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E.
 
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-Compatible-blue)](https://agentskills.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## What is this?
 
-This Agent Skill provides comprehensive guidance for building production-ready SaaS applications with supastarter, including:
+This skill provides comprehensive guidance for building production-ready SaaS applications with supastarter for Next.js, including:
 
-- ✅ **Complete tech stack knowledge** - Next.js, Prisma, Hono.js, better-auth, and more
-- ✅ **Project structure** - Monorepo patterns and organization
-- ✅ **Coding conventions** - Official supastarter coding style and architectural patterns
-- ✅ **Common code patterns** - Authentication, billing, multi-tenancy, and more
-- ✅ **Quick reference** - Commands, troubleshooting, and deployment checklist
+- ✅ **SKILL.md** – When to use, workflow (schema → queries → API → UI → i18n), pointers to references and assets
+- ✅ **20+ reference docs** – Tech stack, setup, configuration, troubleshooting, database, API, auth, organizations, payments, AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E
+- ✅ **Coding conventions** – Official supastarter coding style and architecture (read first before writing code)
+- ✅ **Code patterns** – Prisma, oRPC, Server/Client components, forms, shadcn, auth, organizations
+- ✅ **Quick reference** – Commands, file locations, env template, troubleshooting, deployment checklist
+- ✅ **Scripts** – `generate_module.py` to scaffold new API modules (oRPC)
+- ✅ **Assets** – `env.example`, full **feedback-widget** recipe (DB → API → UI → i18n)
 
 ## Installation
 
-### Using npx skills (Recommended)
+### Using npx skills (when supported)
 
 ```bash
 # Install from GitHub
@@ -27,19 +29,16 @@ npx skills add OscarDRT/supastarter-nextjs-skill
 npx skills add https://github.com/OscarDRT/supastarter-nextjs-skill
 ```
 
-### Using Claude Code
+The skill directory is **supastarter-nextjs-skill** (Agent Skills spec: name matches folder).
 
-```bash
-# In Claude Code CLI
-/plugin install supastarter-nextjs@OscarDRT-supastarter-nextjs-skill
-```
+### Manual Installation (Cursor)
 
-### Manual Installation
+1. Clone or download this repository
+2. Copy the **supastarter-nextjs-skill** folder to one of these locations:
+   - `~/.cursor/skills/supastarter-nextjs-skill/` (global)
+   - `.cursor/skills/supastarter-nextjs-skill/` (project-specific)
 
-1. Download this repository
-2. Copy the skill folder to one of these locations:
-   - `~/.claude/skills/supastarter-nextjs/` (global)
-   - `.claude/skills/supastarter-nextjs/` (project-specific)
+Do not use `~/.cursor/skills-cursor/` (reserved for Cursor).
 
 ## Usage
 
@@ -75,41 +74,21 @@ Once installed, the skill automatically activates when you:
 
 ## What's Included
 
-### Main Documentation
-- Complete supastarter overview
-- Tech stack details
-- Project structure explanation
-- All major features covered
-- Development workflows
-- Deployment guidance
-- Best practices
+### Skill layout (supastarter-nextjs-skill/)
 
-### Coding Conventions
-Your project's source of truth for:
-- Architecture patterns
-- TypeScript conventions
-- React & Next.js patterns
-- Styling with shadcn/ui
-- Form handling
-- API development
-- Database patterns
-- Tooling (pnpm, Biome, Turbo)
+- **SKILL.md** – Frontmatter (name, description) + when to use, workflow, references table, scripts, conventions
+- **references/** – 23 markdown files: coding-conventions, code-patterns, quick-reference, tech-stack, setup, configuration, troubleshooting, database-patterns, api-patterns, auth-patterns, organization-patterns, payments-patterns, ai-patterns, customization, storage-patterns, mailing-patterns, internationalization, seo, deployment, background-tasks, analytics, monitoring, e2e-testing
+- **scripts/** – `generate_module.py` (scaffold oRPC module), `README.md` (usage)
+- **assets/** – `env.example`, `recipes/feedback-widget.md` (full DB → API → UI → i18n recipe)
 
-### Code Patterns
-Ready-to-use examples:
-- Database queries (Prisma/Drizzle)
-- API routes (Hono.js)
-- Frontend components (Next.js)
-- Authentication flows
-- Organization management
-- All copy-paste ready!
+### Coding conventions (references/coding-conventions.md)
+Read first before writing code: architecture, TypeScript, React/Next.js, styling, forms, API, auth, i18n, tooling.
 
-### Quick Reference
-- Common commands cheat sheet
-- File locations
-- Environment variables template
-- Troubleshooting guide
-- Deployment checklist
+### Code patterns (references/code-patterns.md)
+Ready-to-use examples: Prisma models/queries, oRPC + TanStack Query, Server/Client components, react-hook-form + zod, shadcn, auth, organizations.
+
+### Quick reference (references/quick-reference.md)
+Commands, file locations (including oRPC paths), env template, troubleshooting, deployment checklist.
 
 ## Requirements
 
@@ -124,20 +103,18 @@ Works with any Agent Skills-compatible tool:
 ## Example Workflow
 
 ```bash
-# 1. Install the skill
-npx skills add OscarDRT/supastarter-nextjs-skill
+# 1. Install the skill (e.g. copy supastarter-nextjs-skill to ~/.cursor/skills/)
+cp -r supastarter-nextjs-skill ~/.cursor/skills/
 
-# 2. Start your AI assistant
-# Claude Code, Cursor, etc.
+# 2. Open Cursor (or another Agent Skills–compatible tool)
 
-# 3. Ask for help with supastarter
-"Help me implement role-based permissions in my supastarter app"
+# 3. Ask for help with supastarter Next.js
+"Build a feedback widget following the supastarter recipe"
 
-# The skill automatically activates and provides:
-# - Architectural guidance
-# - Code following conventions
-# - Best practices
-# - Working examples
+# The skill activates and provides:
+# - Workflow: schema → queries → API → UI → i18n
+# - References (conventions, patterns, quick reference)
+# - Full feedback-widget recipe in assets/recipes/
 ```
 
 ## Features
@@ -160,12 +137,12 @@ All generated code follows supastarter's official conventions:
 - And 20+ more conventions
 
 ### 🔄 Up-to-date Patterns
-Based on modern supastarter architecture (2025+):
+Based on supastarter Next.js architecture:
 - Next.js 14+ App Router
-- Prisma + Drizzle
-- better-auth
-- oRPC for API
-- Biome for tooling
+- Prisma (schema, migrations, queries in `packages/database`)
+- Better Auth
+- Hono + oRPC (`packages/api/modules/`, procedures, router)
+- Biome for lint/format
 
 ## Contributing
 

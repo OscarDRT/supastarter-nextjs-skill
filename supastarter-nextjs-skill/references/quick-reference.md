@@ -1,6 +1,6 @@
-# supastarter Quick Reference
+# supastarter Quick Reference (Next.js)
 
-Quick reference for common supastarter development tasks and commands.
+Quick reference for common supastarter Next.js development tasks and commands.
 
 ## Initial Setup
 
@@ -92,19 +92,20 @@ pnpm test:coverage
 ### Database
 - Schema: `packages/database/prisma/schema.prisma`
 - Migrations: `packages/database/prisma/migrations/`
+- Queries: `packages/database/prisma/queries/`
 
-### API Routes
-- Hono routes: `packages/api/src/routes/`
-- Main API app: `packages/api/src/index.ts`
+### API (oRPC)
+- Router: `packages/api/orpc/router.ts`
+- Modules: `packages/api/modules/<name>/` (types.ts, procedures/, router.ts)
 
 ### Frontend
 - Pages: `apps/web/app/`
 - Components: `apps/web/components/`
-- UI components: `apps/web/components/ui/`
+- UI components: `apps/web/components/ui/` or `packages/ui/`
 - Layouts: `apps/web/app/layout.tsx`
 
 ### Authentication
-- Auth config: `packages/api/src/auth/` or `apps/web/lib/auth.ts`
+- Auth config: `packages/auth/`
 - Auth pages: `apps/web/app/(auth)/`
 
 ### Organization Routes
@@ -115,6 +116,8 @@ pnpm test:coverage
 - Admin pages: `apps/web/app/(admin)/`
 
 ## Environment Variables Template
+
+See [assets/env.example](../assets/env.example). Summary:
 
 ```env
 # Database
@@ -129,22 +132,11 @@ STRIPE_SECRET_KEY="sk_test_..."
 STRIPE_PUBLISHABLE_KEY="pk_test_..."
 STRIPE_WEBHOOK_SECRET="whsec_..."
 
-# Lemonsqueezy (if using)
-LEMONSQUEEZY_API_KEY="..."
-LEMONSQUEEZY_STORE_ID="..."
-LEMONSQUEEZY_WEBHOOK_SECRET="..."
-
-# Email (if using)
-SMTP_HOST="smtp.example.com"
-SMTP_PORT="587"
-SMTP_USER="..."
-SMTP_PASSWORD="..."
-
 # Storage (if using S3)
 S3_BUCKET="your-bucket"
 S3_REGION="us-east-1"
-S3_ACCESS_KEY="..."
-S3_SECRET_KEY="..."
+S3_ACCESS_KEY_ID="..."
+S3_SECRET_ACCESS_KEY="..."
 ```
 
 ## Quick Troubleshooting
@@ -185,22 +177,22 @@ pnpm db:generate
 2. Use Server Components by default
 3. Use `'use client'` only when needed (forms, interactive elements)
 
-### Adding a new API endpoint
-1. Create route file in `packages/api/src/routes/`
-2. Export Hono app instance
-3. Register in `packages/api/src/index.ts`
-4. Add authentication middleware if needed
+### Adding a new API module (oRPC)
+1. Create module in `packages/api/modules/<name>/` (types.ts, procedures/, router.ts)
+2. Mount router in `packages/api/orpc/router.ts`
+3. Or run `python scripts/generate_module.py <name>` from skill scripts (from monorepo root)
 
 ### Adding a new database model
 1. Add model to `packages/database/prisma/schema.prisma`
 2. Run `pnpm db:migrate` (production) or `pnpm db:push` (dev)
 3. Run `pnpm db:generate` to update Prisma Client
-4. Restart dev server
+4. Add queries in `packages/database/prisma/queries/` and export in `queries/index.ts`
+5. Restart dev server
 
 ### Customizing UI theme
 1. Edit `apps/web/tailwind.config.ts` for Tailwind customization
 2. Edit `apps/web/app/globals.css` for CSS variables
-3. Override shadcn/ui components in `apps/web/components/ui/`
+3. Override shadcn/ui components in `apps/web/components/ui/` or `packages/ui/`
 
 ## Production Deployment Checklist
 
@@ -220,7 +212,6 @@ pnpm db:generate
 ## Resources
 
 - Official docs: https://supastarter.dev/docs/nextjs
-- Discord: Available after purchase
 - Next.js docs: https://nextjs.org/docs
 - Prisma docs: https://www.prisma.io/docs
 - Hono docs: https://hono.dev

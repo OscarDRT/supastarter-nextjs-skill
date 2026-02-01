@@ -1,16 +1,16 @@
 {
-  "name": "supastarter-nextjs",
-  "displayName": "supastarter Next.js",
-  "description": "Expert guidance for supastarter Next.js SaaS development. Includes coding conventions, architecture patterns, and ready-to-use code examples.",
+  "name": "supastarter-nextjs-skill",
+  "displayName": "supastarter Next.js Skill",
+  "description": "Agent Skills–compliant skill for supastarter Next.js: tech stack, setup, configuration, database (Prisma), API (Hono/oRPC), auth (Better Auth), organizations, payments (Stripe), AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E. Includes coding conventions, 20+ reference docs, code patterns, quick reference, and feedback-widget recipe.",
   "version": "1.0.0",
   "author": "Oscar Rodriguez",
   "repository": "https://github.com/OscarDRT/supastarter-nextjs-skill",
   "license": "MIT",
   "skills": [
     {
-      "name": "supastarter-nextjs",
-      "path": "./supastarter-nextjs",
-      "description": "Complete supastarter Next.js development guidance"
+      "name": "supastarter-nextjs-skill",
+      "path": "./supastarter-nextjs-skill",
+      "description": "Complete supastarter Next.js development guidance (Agent Skills format)"
     }
   ],
   "keywords": [

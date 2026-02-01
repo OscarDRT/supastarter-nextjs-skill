@@ -1,4 +1,6 @@
-## Claude Coding Guide
+# Coding Conventions (Next.js)
+
+Use this doc whenever you generate or update code in a supastarter Next.js repo. **Next.js only**; no Vue/Nuxt.
 
 ### Purpose
 - Use this doc whenever you generate or update code in this repository.
@@ -72,5 +74,3 @@
 - Ask for clarification on product requirements rather than guessing.
 - Prefer incremental, well-scoped changes over sweeping rewrites.
 - Ensure any new feature has a corresponding server and client story (UI, API, data layer, emails if needed).
-
-
