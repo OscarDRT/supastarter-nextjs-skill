@@ -1,26 +1,30 @@
 {
   "name": "supastarter-nextjs-skill",
-  "displayName": "supastarter Next.js Skill",
-  "description": "Agent Skills–compliant skill for supastarter Next.js: tech stack, setup, configuration, database (Prisma), API (Hono/oRPC), auth (Better Auth), organizations, payments (Stripe), AI, customization, storage, mailing, i18n, SEO, deployment, background tasks, analytics, monitoring, E2E. Includes coding conventions, 20+ reference docs, code patterns, quick reference, and feedback-widget recipe.",
-  "version": "1.1.0",
-  "author": "Oscar Riano Tapias",
-  "repository": "https://github.com/OscarDRT/supastarter-nextjs-skill",
-  "license": "MIT",
-  "skills": [
+  "owner": {
+    "name": "Oscar Riano Tapias"
+  },
+  "plugins": [
     {
       "name": "supastarter-nextjs-skill",
-      "path": "./supastarter-nextjs-skill",
-      "description": "Complete supastarter Next.js development guidance (Agent Skills format)"
+      "source": "./supastarter-nextjs-skill",
+      "description": "Agent Skills-compliant skill for supastarter Next.js: tech stack, setup, Prisma, Hono/oRPC, Better Auth, Stripe, AI, i18n, SEO, deployment and more.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Oscar Riano Tapias"
+      },
+      "repository": "https://github.com/OscarDRT/supastarter-nextjs-skill",
+      "license": "MIT",
+      "keywords": [
+        "supastarter",
+        "nextjs",
+        "saas",
+        "boilerplate",
+        "prisma",
+        "authentication",
+        "billing",
+        "multi-tenancy"
+      ],
+      "strict": false
     }
-  ],
-  "keywords": [
-    "supastarter",
-    "nextjs",
-    "saas",
-    "boilerplate",
-    "prisma",
-    "authentication",
-    "billing",
-    "multi-tenancy"
   ]
 }
