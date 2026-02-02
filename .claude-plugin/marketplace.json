@@ -1,0 +1,30 @@
+{
+  "name": "supastarter-nextjs-skill",
+  "owner": {
+    "name": "Oscar Riano Tapias"
+  },
+  "plugins": [
+    {
+      "name": "supastarter-nextjs-skill",
+      "source": "./supastarter-nextjs-skill",
+      "description": "Agent Skills-compliant skill for supastarter Next.js: tech stack, setup, Prisma, Hono/oRPC, Better Auth, Stripe, AI, i18n, SEO, deployment and more.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Oscar Riano Tapias"
+      },
+      "repository": "https://github.com/OscarDRT/supastarter-nextjs-skill",
+      "license": "MIT",
+      "keywords": [
+        "supastarter",
+        "nextjs",
+        "saas",
+        "boilerplate",
+        "prisma",
+        "authentication",
+        "billing",
+        "multi-tenancy"
+      ],
+      "strict": false
+    }
+  ]
+}
